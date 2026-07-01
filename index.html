@@ -40,32 +40,38 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 18px;
+    gap: 10px;
+    padding: 10px 14px;
   }
   .nav-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-style: italic;
-    color: var(--orange-dark);
-    font-size: 1.05rem;
+    flex-shrink: 0;
     text-decoration: none;
   }
-  .nav-logo img { height: 34px; width: auto; }
+  .nav-logo img { height: 32px; width: auto; display: block; }
   .nav-links {
     display: flex;
-    gap: 4px;
+    align-items: center;
+    gap: 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
+  .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    height: 32px;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: .8rem;
+    font-size: .74rem;
+    line-height: 1;
     letter-spacing: .04em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--ink);
-    padding: 8px 10px;
+    white-space: nowrap;
+    padding: 0 9px;
     border-radius: 20px;
   }
   .nav-links a.cta {
@@ -183,6 +189,20 @@
     margin: 0 auto;
   }
   .about-text strong { color: var(--orange-dark); }
+
+  .info-box {
+    background: var(--orange-soft);
+    border: 1px solid var(--orange-line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 24px auto 0;
+    max-width: 640px;
+    text-align: center;
+    font-size: .92rem;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .info-box strong { color: var(--orange-dark); }
 
   /* ---------- GALLERIA ---------- */
   .gallery {
@@ -304,8 +324,10 @@
     <img src="logo.png" alt="La Deliziosa">
   </a>
   <div class="nav-links">
+    <a href="#locale">Il Locale</a>
     <a href="#chi-siamo">Chi siamo</a>
-    <a href="#galleria">Galleria</a>
+    <a href="#pizza">La Pizza</a>
+    <a href="#torte">Torte</a>
     <a href="#contatti">Contatti</a>
     <a class="cta" href="https://menu.ladeliziosa.it">Menù</a>
   </div>
@@ -323,21 +345,9 @@
   </div>
 </header>
 
-<section id="chi-siamo">
-  <p class="eyebrow">Dal 1987</p>
-  <h2>Chi siamo</h2>
-  <div class="divider"><span>✦</span></div>
-  <p class="about-text">
-    <strong>La Deliziosa</strong> nasce a Rovigo nel 1987 e da allora porta in tavola pizze
-    preparate con cura, ingredienti selezionati e la stessa passione di sempre.
-    Un ambiente familiare, accogliente, pensato per farti sentire a casa —
-    che tu venga per una cena veloce o per una serata in compagnia.
-  </p>
-</section>
-
-<section id="galleria">
-  <p class="eyebrow">Il Locale</p>
-  <h2>Galleria</h2>
+<section id="locale">
+  <p class="eyebrow">Il Nostro Spazio</p>
+  <h2>Il Locale</h2>
   <div class="divider"><span>✦</span></div>
   <div class="gallery">
     <figure class="wide">
@@ -353,13 +363,104 @@
   </div>
 </section>
 
+<section id="chi-siamo">
+  <p class="eyebrow">Dal 1987</p>
+  <h2>Chi siamo</h2>
+  <div class="divider"><span>✦</span></div>
+  <p class="about-text">
+    <strong>La Deliziosa</strong> nasce a Rovigo nel 1987 e da allora porta in tavola pizze
+    preparate con cura, ingredienti selezionati e la stessa passione di sempre.
+    Un ambiente familiare, accogliente, pensato per farti sentire a casa —
+    che tu venga per una cena veloce o per una serata in compagnia.
+  </p>
+</section>
+
+<section id="pizza">
+  <p class="eyebrow">Il Nostro Prodotto</p>
+  <h2>La Pizza</h2>
+  <div class="divider"><span>✦</span></div>
+  <p class="about-text">
+    Dietro ogni pizza c'è un lavoro di ricerca continuo: studiamo e perfezioniamo
+    i nostri impasti per trovare il giusto equilibrio tra leggerezza, fragranza
+    e digeribilità. A questo affianchiamo una selezione attenta di ingredienti
+    locali, scelti per portare in tavola sapori autentici e di qualità —
+    dal classico alle proposte più ricercate, incluse opzioni
+    gluten free e vegane.
+  </p>
+  <div class="gallery" style="margin-top:28px;">
+    <figure><img src="pizza-burrata-pancetta.jpeg" alt="Pizza con burrata e pancetta"></figure>
+    <figure><img src="pizza-pesto-brie-crudo.jpeg" alt="Pizza con pesto, brie e crudo"></figure>
+    <figure><img src="pizza-olive-feta-pomodorini.jpeg" alt="Pizza con olive, feta e pomodorini secchi"></figure>
+    <figure><img src="pizza-verdure-miste.jpeg" alt="Pizza con verdure miste"></figure>
+    <figure><img src="pizza-pesto-pomodorini-secchi.jpeg" alt="Pizza con pesto e pomodorini secchi"></figure>
+    <figure><img src="pizza-salsiccia-friarielli.jpeg" alt="Pizza con salsiccia e friarielli"></figure>
+    <figure><img src="pizza-nero-burrata.jpeg" alt="Pizza al nero con burrata"></figure>
+    <figure><img src="pizza-zucchine-burrata.jpeg" alt="Pizza con zucchine e burrata"></figure>
+    <figure><img src="pizza-capperi-acciughe.jpeg" alt="Pizza con capperi e acciughe"></figure>
+    <figure><img src="pizza-margherita-mozzarella.jpeg" alt="Pizza con mozzarella e pomodoro"></figure>
+    <figure><img src="pizza-patate-salsiccia.jpeg" alt="Pizza con patate e salsiccia"></figure>
+    <figure><img src="pizza-melanzane-spinaci-doppia.jpeg" alt="Pizze con melanzane e spinaci"></figure>
+    <figure><img src="pizza-melanzane-mozzarella.jpeg" alt="Pizza con melanzane e mozzarella"></figure>
+    <figure><img src="pizza-margherita-basilico.jpeg" alt="Pizza margherita con basilico fresco"></figure>
+    <figure><img src="pizza-carciofi.jpeg" alt="Pizza con carciofi"></figure>
+    <figure><img src="pizza-verdure-grigliate.jpeg" alt="Pizza con verdure grigliate"></figure>
+    <figure><img src="pizza-asparagi-pancetta.jpeg" alt="Pizza con asparagi e pancetta"></figure>
+    <figure><img src="pizza-radicchio-pancetta.jpeg" alt="Pizza con radicchio e pancetta"></figure>
+  </div>
+</section>
+
+<section id="torte">
+  <p class="eyebrow">Su Ordinazione</p>
+  <h2>Torte per Ricorrenze</h2>
+  <div class="divider"><span>✦</span></div>
+  <p class="about-text">
+    Realizziamo torte artigianali su misura per compleanni, anniversari e ogni tipo
+    di festeggiamento: personalizzate nella forma, nel gusto e nella decorazione,
+    per rendere unico ogni momento speciale.
+  </p>
+  <div class="info-box">
+    Proprio perché ogni torta viene preparata da noi con cura, <strong>non è consentito
+    portare dolci o torte prodotti esternamente</strong> all'interno del locale.
+    Per prenotare la tua torta su misura, contattaci per tempo su WhatsApp o telefono.
+  </div>
+  <div class="gallery" style="margin-top:28px;">    <figure>
+      <img src="torta-buon-compleanno-laura.jpeg" alt="Torta di compleanno personalizzata">
+    </figure>
+    <figure>
+      <img src="torta-tanti-auguri-roberta.jpeg" alt="Torta con fragole e fiori commestibili">
+    </figure>
+    <figure>
+      <img src="torta-tanti-auguri-franco.jpeg" alt="Torta millefoglie con frutta fresca">
+    </figure>
+    <figure>
+      <img src="torta-make-a-wish.jpeg" alt="Torta decorata con petali di rosa">
+    </figure>
+    <figure>
+      <img src="torta-tanti-auguri-romina.jpeg" alt="Torte a forma di numero con frutti di bosco">
+    </figure>
+    <figure>
+      <img src="torta-millefoglie-stefania.jpeg" alt="Torta millefoglie con zucchero a velo">
+    </figure>    <figure>
+      <img src="torta-tanti-auguri-09.jpeg" alt="Torta con frutti di bosco freschi">
+    </figure>
+    <figure>
+      <img src="torta-tanti-auguri-sereno.jpeg" alt="Torta al limone con granella e meringhe">
+    </figure>
+    <figure>
+      <img src="torta-auguri-fofi.jpeg" alt="Torta rosa decorata con rose fresche">
+    </figure>
+    <figure>
+      <img src="torta-cuore-letizia.jpeg" alt="Torta a forma di cuore con decorazioni">
+    </figure>  </div>
+</section>
+
 <section id="contatti">
   <p class="eyebrow">Vieni a Trovarci</p>
   <h2>Contatti</h2>
   <div class="divider"><span>✦</span></div>
   <div class="contact-card">
     <p class="contact-row"><strong>La Deliziosa</strong></p>
-    <p class="contact-row">Rovigo (RO)</p>
+    <p class="contact-row">Viale Porta Adige 66, Rovigo (RO)</p>
     <p class="contact-row">Lun – Sab · 19:00 – 00:00</p>
     <p class="contact-row">Tel. <a href="tel:0425484031">0425 484031</a></p>
     <div class="contact-btns">
@@ -368,7 +469,7 @@
     </div>
   </div>
   <div class="map-wrap">
-    <iframe src="https://maps.google.com/maps?q=La%20Deliziosa%20Rovigo&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen title="Mappa La Deliziosa Rovigo"></iframe>
+    <iframe src="https://maps.google.com/maps?q=Viale%20Porta%20Adige%2066%20Rovigo&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" allowfullscreen title="Mappa La Deliziosa Rovigo"></iframe>
   </div>
 </section>
 
