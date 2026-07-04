@@ -30,7 +30,16 @@
   a { color: inherit; }
 
   /* ---------- NAV ---------- */
-  .nav {
+  .closure-banner {
+    display: none;
+    background: var(--orange-mid);
+    color: #fff;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .82rem;
+    letter-spacing: .02em;
+    padding: 10px 16px;
+  }
     position: sticky;
     top: 0;
     z-index: 100;
@@ -319,6 +328,10 @@
 </head>
 <body>
 
+<div id="closure-banner" class="closure-banner">
+  ⚠️ Chiusi per ferie da Lunedì 6 a Martedì 14 Luglio compresi — Riapriamo Mercoledì 15 Luglio
+</div>
+
 <nav class="nav">
   <a class="nav-logo" href="#top">
     <img src="logo.png" alt="La Deliziosa">
@@ -477,6 +490,18 @@
   <strong>La Deliziosa</strong> · Lun – Sab · 19:00 – 00:00 · <a href="tel:0425484031">0425 484031</a>
   <span class="no-cookie">Questo sito non raccoglie dati personali e non utilizza cookie di profilazione.</span>
 </footer>
+
+<script>
+  // Mostra l'avviso di chiusura solo fino al 14 luglio 2026 incluso.
+  // Dal 15 luglio in poi (o in qualunque visita successiva) sparisce da solo.
+  (function() {
+    var cutoff = new Date(2026, 6, 15, 0, 0, 0); // 15 luglio 2026, mezzanotte
+    if (new Date() < cutoff) {
+      var banner = document.getElementById('closure-banner');
+      if (banner) banner.style.display = 'block';
+    }
+  })();
+</script>
 
 </body>
 </html>
